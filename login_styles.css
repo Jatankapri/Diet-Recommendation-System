@@ -1,0 +1,179 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+    background-color: #4CAF50;  /* Green background for the entire page */
+    color: #333;
+    display: flex;
+    flex-direction: column;  /* Stack header and form */
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Header Section */
+.header {
+    width: 100%;
+    background-color: #fff; /* White background for the header */
+    padding: 50px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: absolute;  /* Keeps the header at the top */
+    top: 0;
+    left: 0;
+}
+
+.header h1 {
+    color: #4CAF50; /* Green color for the header text */
+    font-size: 28px;
+    margin: 0;
+}
+
+/* Outer Box Styling */
+.outer-box {
+    background-color: #e2e2e2; /* Light grey color for the outer box */
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 100px;  /* To add space between the header and the form */
+    width: 100%;
+    max-width: 400px;
+}
+
+/* Container Styling for both forms */
+.container {
+    width: 100%;
+    background-color: #fff; /* White background for the form */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Heading Style */
+h2 {
+    text-align: center;
+    color: #4CAF50;  /* Green color for headings */
+    margin-bottom: 20px;
+}
+
+/* Form Styling */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Input Fields Styling */
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="number"],
+select {
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    outline: none;
+}
+
+/* Focused Input Styling */
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="email"]:focus,
+input[type="number"]:focus,
+select:focus {
+    border-color: #4CAF50; /* Green border on focus */
+}
+
+/* Submit Button Styling */
+button {
+    padding: 12px;
+    background-color: #4CAF50;  /* Green button */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #45a049;  /* Darker green on hover */
+}
+
+/* Link Styling */
+.links {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.links a {
+    text-decoration: none;
+    color: #4CAF50;  /* Green color for links */
+    font-size: 14px;
+}
+
+.links a:hover {
+    text-decoration: underline;
+}
+
+
+/* Stay Logged Out Button Centering */
+.stay-logged-out-container {
+    margin-top: 20px;
+    text-align: center;
+}
+#stay-logged-out {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#stay-logged-out:hover {
+    background-color: #4CAF50;
+}
+
+/* Center the Stay Logged Out Button inside its container */
+.stay-logged-out-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+
+/* Error message styling */
+.error-messages {
+    color: red;
+    font-size: 14px;
+    text-align: center;
+    margin-top: 15px;
+    list-style-type: none;
+}
+
+.error-message {
+    margin-bottom: 10px;
+}
+
+
+/* Form Field Validation (removed red color) */
+input:invalid,
+select:invalid {
+    /* No red border on invalid fields */
+    border-color: #ccc; /* Neutral border color */
+}
+
+input:valid,
+select:valid {
+    border-color: #4CAF50; /* Green border for valid inputs */
+}
+

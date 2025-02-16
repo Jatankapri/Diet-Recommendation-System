@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diet Recommendation System</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <h2>Personalized Diet Recommendation System</h2>
+    </header>
+    <main>
+        <h2>Get Your Personalized Diet Plan</h2>
+        <form id="diet-form">
+            <div class="form-section">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" placeholder="Enter your name" required>
+            </div>
+            <div class="form-section">
+                <label for="age">Age:</label>
+                <input type="number" id="age" name="age" placeholder="Enter your age" required min="1">
+            </div>
+            <div class="form-section">
+                <label for="gender">Gender:</label>
+                <select id="gender" name="gender" required>
+                    <option value="">Select</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+            </div>
+            <label>Diet Preference:
+                <select id="diet">
+                    <option value="vegetarian">Vegetarian</option>
+                    <option value="non-vegetarian">Non-Vegetarian</option>
+                    
+                </select>
+            </label>
+            <div class="form-section">
+                <label for="activity">Activity Level:</label>
+                <select id="activity" name="activity" required>
+                    <option value="">Select</option>
+                    <option value="sedentary">Sedentary</option>
+                    <option value="moderate">Moderate</option>
+                    <option value="active">Active</option>
+                </select>
+            </div>
+            <div class="form-section">
+                <label for="goal">Goal:</label>
+                <select id="goal" name="goal" required>
+                    <option value="">Select</option>
+                    <option value="weight_loss">Weight Loss</option>
+                    <option value="weight_gain">Weight Gain</option>
+                    <option value="maintenance">Maintenance</option>
+                </select>
+            </div>
+            <div class="form-section">
+                <label for="height">Height (in cm):</label>
+                <input type="number" id="height" name="height" placeholder="Enter your height" required min="1">
+            
+                <label for="weight"><br>Weight (in kg):</label>
+                <input type="number" id="weight" name="weight" placeholder="Enter your weight" required min="1">
+        
+            <div class="form-section">
+                <br>
+                <button type="button" id="calculate-bmi-bmr">Calculate BMI & BMR</button>
+                <p id="bmi-result"></p><p id="healthy-weight-range"></p>
+                <p id="bmr-result"></p>
+            </div>
+            <button type="submit">Get Recommendations</button>
+        </form>
+        <div id="recommendations"></div>
+          
+       <!-- Meal Selection Section (Initially Hidden) -->
+   
+       
+  <!-- Meal Selection Section (Now Side-by-Side) -->
+  <div id="meal-selection" style="display: none;">
+    <h2>Choose Your Meals</h2>
+    
+    <div class="meal-options">
+        <div>
+            <label for="breakfast">Breakfast:</label>
+            <select id="breakfast"></select>
+        </div>
+        <div>
+            <label for="lunch">Lunch:</label>
+            <select id="lunch"></select>
+        </div>
+        <div>
+            <label for="dinner">Dinner:</label>
+            <select id="dinner"></select>
+        </div>
+    </div>
+
+    <button id="saveSelection" style="margin-top: 10px;">Save Selection</button>
+
+    <!-- Systematic placement of charts below meal selection -->
+    <div id="charts-container" style="margin-top: 20px; text-align: center;">
+      <h3>Macronutrient Breakdown</h3>
+      <canvas id="nutrientChart"></canvas>
+
+  </div>
+  
+        <h3>Calorie Comparison</h3>
+        <canvas id="calorieChart"></canvas>
+    </div>
+</div>
+<div>
+    <h2>View Your Saved Meals</h2>
+    <!-- Link to the saved_meals route -->
+    <a href="{{ url_for('saved_meals') }}">
+        <button class="index-button">View Saved Meals</button>
+    </a>
+</div>
+
+        <!-- Loading Spinner -->
+<div id="loading-spinner" class="loader"></div>
+ </main>
+    <footer>
+        <p>&copy; 2025 Diet Recommendation System. All Rights Reserved.</p>
+    </footer>
+  </body>
+  <script defer src="{{ url_for('static', filename='scripts.js') }}"></script>
+</html>
