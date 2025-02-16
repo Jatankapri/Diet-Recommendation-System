@@ -1,3 +1,3 @@
-# Diet-Recommendation-System
-Minor Project
-Diet Recomendation system with login.
+# Diet-Recommendation-System using LSTM
+A Minor Project on
+Diet Recomendation system using LSTM with login.
